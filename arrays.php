@@ -28,6 +28,7 @@ $data = array(
 
 echo $data["salik"]["phone"];
 echo "<br>";
+echo "<br>";
 echo $data["usman"]["email"]
 
 
