@@ -20,7 +20,7 @@ $email = $_POST['email'];
 $number = $_POST['number'];
 $feedback = $_POST['feedback'];
 
-$sql = "insert into $database.studentdata ( username , email , 'number' , feedback) 
+$sql = "insert into $database.studentdata ( username , email , number , feedback) 
   values ('$username' , '$email' , '$number' , '$feedback')";
 
 
