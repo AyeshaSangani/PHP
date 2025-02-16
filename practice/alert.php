@@ -2,12 +2,13 @@
 include 'connection.php';
 
 if (isset($_POST['submit'])) {
-    $title = trim($_POST['title']);
-    $msg = trim($_POST['msg']);
+    $title = ($_POST['title']);
+    $msg = ($_POST['msg']);
 
 
     if (empty($title) || empty($msg)) {
         echo "<script>alert('Title and Message cannot be empty!');</script>";
+         exit();
     } else {
         $sql = "INSERT INTO keepnotes.stickynotes (title, msg) VALUES ('$title', '$msg')";
         $result = mysqli_query($connection, $sql);
@@ -15,7 +16,7 @@ if (isset($_POST['submit'])) {
         if ($result) {
             echo "<script>alert('Data added successfully!');</script>";
             header("Location: read.php");
-            exit();
+           
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);
         }
