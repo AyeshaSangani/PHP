@@ -1,18 +1,39 @@
 <?php
 
 
-$eng = $_GET['eng'];
-$phy = $_GET['phy'];
-$chem = $_GET['chem'];
-  
 
-if ($eng >=98) {
-    $msg = 'Max Value 98';
+$vote = $_GET['vote'];
 
-    }  else {
-        echo 'true';
+
+
+if($vote > 90) {
+
+
+
+$msg = "excellent";
+
+
+
 }
 
+
+
+elseif ($vote >=70)
+
+
+$msg = "good";
+
+
+
+elseif ($vote >=50)
+
+
+$msg = "fair";
+
+elseif ($vote < 50)
+
+
+$msg = "fail";
 
 ?>
 
@@ -25,7 +46,7 @@ if ($eng >=98) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Result System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -36,18 +57,21 @@ if ($eng >=98) {
 
         <div class="card p-5">
 
-            <h1>Marks Calculate</h1>
+          
 
             <form action="#" method="get">
 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">English</label>
-                    <input type="number" name="eng" class="form-control" 
-                    id="exampleFormControlInput1" placeholder="Enter English Marks">
+                  
+                    <input type="text" name="vote" class="form-control" 
+                    id="exampleFormControlInput1" placeholder="Enter Marks">
+
+                    <button>click</button>
+
                     <span class="text-danger"> <?php echo $msg ?></span>
 
                 </div>
-
+<!-- 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Physics</label>
                     <input type="number" name="phy" class="form-control" 
@@ -61,7 +85,7 @@ if ($eng >=98) {
                     id="exampleFormControlInput1" placeholder="Enter chemistry Marks">
                     <span class="text-danger"> <?php echo $msg ?></span>
                 </div>
-                <button class="btn btn-primary" > Submit </button>
+                <button class="btn btn-primary" > Submit </button> -->
 
             </form>
 
